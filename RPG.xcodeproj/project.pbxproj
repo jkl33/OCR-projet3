@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843DAB90219AA97C0019F5F0 /* classWarrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DAB8F219AA97C0019F5F0 /* classWarrior.swift */; };
+		843DAB94219AA9B80019F5F0 /* classTank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DAB93219AA9B80019F5F0 /* classTank.swift */; };
+		843DAB96219AA9CB0019F5F0 /* classDwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DAB95219AA9CB0019F5F0 /* classDwarf.swift */; };
+		843DAB98219AA9E20019F5F0 /* nameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DAB97219AA9E20019F5F0 /* nameManager.swift */; };
+		843DAB9A219AAA870019F5F0 /* classMage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DAB99219AAA870019F5F0 /* classMage.swift */; };
+		843DAB9C219AAAC80019F5F0 /* classCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843DAB9B219AAAC80019F5F0 /* classCharacter.swift */; };
 		847CDC01218BE74900686767 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDC00218BE74900686767 /* main.swift */; };
+		84EA5A4C219AED8F002474B1 /* weapons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA5A4B219AED8F002474B1 /* weapons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +30,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		843DAB8F219AA97C0019F5F0 /* classWarrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classWarrior.swift; sourceTree = "<group>"; };
+		843DAB93219AA9B80019F5F0 /* classTank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classTank.swift; sourceTree = "<group>"; };
+		843DAB95219AA9CB0019F5F0 /* classDwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classDwarf.swift; sourceTree = "<group>"; };
+		843DAB97219AA9E20019F5F0 /* nameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameManager.swift; sourceTree = "<group>"; };
+		843DAB99219AAA870019F5F0 /* classMage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classMage.swift; sourceTree = "<group>"; };
+		843DAB9B219AAAC80019F5F0 /* classCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classCharacter.swift; sourceTree = "<group>"; };
 		847CDBFD218BE74900686767 /* RPG */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RPG; sourceTree = BUILT_PRODUCTS_DIR; };
 		847CDC00218BE74900686767 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		84EA5A4B219AED8F002474B1 /* weapons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weapons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,13 @@
 			isa = PBXGroup;
 			children = (
 				847CDC00218BE74900686767 /* main.swift */,
+				843DAB97219AA9E20019F5F0 /* nameManager.swift */,
+				843DAB9B219AAAC80019F5F0 /* classCharacter.swift */,
+				84EA5A4B219AED8F002474B1 /* weapons.swift */,
+				843DAB8F219AA97C0019F5F0 /* classWarrior.swift */,
+				843DAB99219AAA870019F5F0 /* classMage.swift */,
+				843DAB93219AA9B80019F5F0 /* classTank.swift */,
+				843DAB95219AA9CB0019F5F0 /* classDwarf.swift */,
 			);
 			path = RPG;
 			sourceTree = "<group>";
@@ -119,7 +140,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EA5A4C219AED8F002474B1 /* weapons.swift in Sources */,
 				847CDC01218BE74900686767 /* main.swift in Sources */,
+				843DAB90219AA97C0019F5F0 /* classWarrior.swift in Sources */,
+				843DAB9A219AAA870019F5F0 /* classMage.swift in Sources */,
+				843DAB9C219AAAC80019F5F0 /* classCharacter.swift in Sources */,
+				843DAB98219AA9E20019F5F0 /* nameManager.swift in Sources */,
+				843DAB94219AA9B80019F5F0 /* classTank.swift in Sources */,
+				843DAB96219AA9CB0019F5F0 /* classDwarf.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
