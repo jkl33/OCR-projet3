@@ -13,7 +13,6 @@ class NameManager{
     private init(){}
     static func checkName(str: String) -> Bool{
         if tab.contains(str){
-            print("This name is already taken, pick another one.")
             return false
         } else{
             tab.append(str)

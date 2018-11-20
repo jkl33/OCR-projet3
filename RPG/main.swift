@@ -7,22 +7,23 @@
 //
 
 import Foundation
+var theGame = Game()
+theGame.start()
+theGame.fight()
 
+/*
 var characTab = [Character]()
-var j = NameManager.tab.count
-//let y = NameManager.tab.count   pourquoi ça ne marche pas ?
-var i = 0
 func makeTheTeam(){
     print("Player 1 what's your name ?")
-    if let namePlayer1 = readLine(){
-        if NameManager.checkName(str: namePlayer1) == true{
-       print("Bonjour", namePlayer1)
+    if let namePlayer1 = readLine(){ //TODO gerer l'erreur (le cas ou c est vide)
+        if NameManager.checkName(str: namePlayer1){
+            print("Bonjour", namePlayer1)
         }
     }
         while(i != 1){
     print("Player 2 what's your name ?")
     if let namePlayer2 = readLine(){
-        if NameManager.checkName(str: namePlayer2) == true{
+        if NameManager.checkName(str: namePlayer2){
         print("Bonjour", namePlayer2)
             i = 1
             }
@@ -31,7 +32,7 @@ func makeTheTeam(){
         while(i != 2){
             print(NameManager.tab[0], "what's the name of your first character ?")
             if let temporaryName1 = readLine(){
-                if NameManager.checkName(str: temporaryName1) == true{
+                if NameManager.checkName(str: temporaryName1){
                     i = 2
                 }
             }
@@ -106,3 +107,4 @@ func chest(){
         }
     }
 }
+*/

@@ -16,7 +16,7 @@ class Weapon{
         self.dmg = dmg
     }
 }
-var wpWarrior1 = Weapon(name: "weaponWarrior1", dmg: 10)
+var wpWarrior1 = Weapon(name: "weaponWarrior1", dmg: 100)
 var wpWarrior2 = Weapon(name: "weaponWarrior2", dmg: 20)
 var wpMage1 = Weapon(name: "weaponMage1", dmg: -10)
 var wpMage2 = Weapon(name: "weaponMage2", dmg: -20)
