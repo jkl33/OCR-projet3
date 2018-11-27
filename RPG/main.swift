@@ -9,7 +9,6 @@
 import Foundation
 var theGame = Game()
 theGame.start()
-theGame.fight()
 
 /*
 var characTab = [Character]()

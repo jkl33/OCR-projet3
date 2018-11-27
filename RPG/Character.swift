@@ -17,4 +17,10 @@ class Character{
         self.weapon = weapon
         self.name = name
     }
+    func isAlive() -> Bool{
+        return hp > 0
+    }
+    func attack(target: Character){
+        target.hp -= weapon.dmg
+    }
 }

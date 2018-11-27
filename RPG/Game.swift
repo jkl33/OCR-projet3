@@ -8,8 +8,88 @@
 
 import Foundation
 
-class Game{
 
+class Game{
+    private func getName() -> String{
+        if let name = readLine(){
+            if NameManager.checkName(str: name){
+                return name
+            } else {
+                print("This name is already taken, pick another one.")
+                return getName()
+            }
+        } else {
+            print("This name is already taken, pick another one.")
+            return getName()
+        }
+    }
+    
+    func start(){
+        print("Player 1 what's your name ?")
+        let Player1 = Player(name: getName())
+        print("Player 2 what's your name ?")
+        let Player2 = Player(name: getName())
+        while Player1.team.count < 3 && Player2.team.count < 3{
+        Player1.makeTheTeam()
+        Player2.makeTheTeam()
+        }
+            var attacker = 0
+            var attacked = 0
+            while Player1.isTeamAlive() && Player2.isTeamAlive() {
+                if Player1.whoIsAttacking(Player1.team) == Player1.team[attacker].name{
+                    if Player2.whoIsAttacked(Player2.team) == Player2.team[attacked].name{
+                        Player1.team[attacker].attack(target: Player2.team[attacked])
+                        attacked += 1
+                    }
+                    attacker += 1
+                }
+                print(Player1.team[0].hp, Player1.team[1].hp, Player1.team[2].hp, Player2.team[0].hp, Player2.team[1].hp, Player2.team[2].hp)
+        }
+    
+}
+}
+        
+        /*
+        func fight(){
+            var tmp = Player1.team[0]
+            print("Pick a character to play with")
+                if Player1.team[0].isAlive(){
+                    print(Player1.team[0].name)
+            }
+                if Player1.team[1].isAlive(){
+                    print(Player1.team[1].name)
+            }
+                if Player1.team[2].isAlive(){
+                    print(Player1.team[2].name)
+            }
+            if let attacker = readLine(){
+                if attacker == Player1.team[0].name{
+                    
+                }
+            }
+        }
+    
+        print("Pick a target")
+            var y = 1
+        for character in Player2.team{
+            print(y, ".", Player2.team[y - 1].name)
+            if let choice = readLine() {
+                switch choice {
+                case "1":
+                    tmp.attack(target: Player2.team[y - 1])
+                    y += 1
+                default:
+                    print("You need to pick a someone.")
+                }
+    }
+}
+                print(Player2.team[0].hp)
+            print(Player2.team[1].hp)
+            print(Player2.team[2].hp)
+}
+}
+//}
+/*
     var n = 0
     var y = 1
     func start(){
@@ -166,3 +246,5 @@ class Game{
     }
 
 }
+*/
+ */
