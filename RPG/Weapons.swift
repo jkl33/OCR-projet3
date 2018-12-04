@@ -9,8 +9,8 @@
 import Foundation
 
 class Weapon{
-    let name: String
-    let dmg: Int
+    var name: String
+    var dmg: Int
     init(name: String, dmg: Int){
         self.name = name
         self.dmg = dmg
@@ -24,3 +24,5 @@ var wpTank1 = Weapon(name: "weaponTank1", dmg: 5)
 var wpTank2 = Weapon(name: "weaponTank2", dmg: 10)
 var wpDwarf1 = Weapon(name: "weaponDwarf1", dmg: 15)
 var wpDwarf2 = Weapon(name: "weaponDwarf2", dmg: 30)
+
+var weaponTab = [wpWarrior1, wpWarrior2,]
