@@ -16,13 +16,8 @@ class Weapon{
         self.dmg = dmg
     }
 }
-var wpWarrior1 = Weapon(name: "weaponWarrior1", dmg: 100)
-var wpWarrior2 = Weapon(name: "weaponWarrior2", dmg: 20)
-var wpMage1 = Weapon(name: "weaponMage1", dmg: -10)
-var wpMage2 = Weapon(name: "weaponMage2", dmg: -20)
-var wpTank1 = Weapon(name: "weaponTank1", dmg: 5)
-var wpTank2 = Weapon(name: "weaponTank2", dmg: 10)
-var wpDwarf1 = Weapon(name: "weaponDwarf1", dmg: 15)
-var wpDwarf2 = Weapon(name: "weaponDwarf2", dmg: 30)
+var wpWarrior1 = Weapon(name: "basicSword", dmg: 100)
+var wpMage1 = Weapon(name: "basicCrystalBall", dmg: -10)
+var wpTank1 = Weapon(name: "basicShield", dmg: 5)
+var wpDwarf1 = Weapon(name: "basicHammer", dmg: 15)
 
-var weaponTab = [wpWarrior1, wpWarrior2,]

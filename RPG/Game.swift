@@ -25,7 +25,7 @@ class Game{
     }
     
     func start(){
-        print("Welcome to my awesome game, this is a two player game. Each player have to make a team of three characters and then they fight each other untill one player's team is dead. \n There is three types of characters: \n Warrior 🗡, the typical Warrior, reliable \n Mage 🔮, he can heal his allies \n Tank 🛡, He has a lot of health points but doesnt deal a lot of dammage \n  Dwarf 🔨, Does a lot of dommage but has very few health points \n")
+        print("Welcome to my awesome game, this is a two player game. Each player have to make a team of three characters and then they fight each other untill one player's team is dead. \nThere is three types of characters: \nWarrior 🗡, the typical Warrior, reliable \nMage 🔮, he can heal his allies \nTank 🛡, He has a lot of health points but doesnt deal a lot of dammage \nDwarf 🔨, Does a lot of dommage but has very few health points \n")
         print("Player 1 what's your name ?")
         let player1 = Player(name: getName())
         print("Player 2 what's your name ?")
@@ -58,19 +58,25 @@ class Game{
             + "\n3. Tank 🛡"
             + "\n4. Dwarf 🔨"
         )
+        var i = 0
+        while i != 1{
         if let choice = readLine(){
             switch choice {
             case "1":
                 Player.team.append(Warrior.init(name: tmp))
+                i = 1
             case "2":
                 Player.team.append(Mage.init(name: tmp))
+                i = 1
             case "3":
                 Player.team.append(Tank.init(name: tmp))
+                i = 1
             case "4":
                 Player.team.append(Dwarf.init(name: tmp))
+                i = 1
             default:
                 print("You need to pick a type.")
-                NameManager.tab.removeLast()
+                }
             }
         }
     }
@@ -88,25 +94,22 @@ class Game{
         print("\n")
         print(attacker.name, "Pick someone to play with")
         let attackerChar = chooseCharacterIn(team: attacker.team)
-        Chest(aCharacter: attackerChar)
+        let aChest = Chest.init()
+        aChest.giveAWeaponTo(aCharacter: attackerChar)
         print(attacker.name, "Pick a target")
         var victimChar: Character
-        if attackerChar.weapon.dmg < 0{ // est-ce que le mage peut donner des hp à un perso full life?
+        if attackerChar.weapon.dmg < 0{
             victimChar = chooseCharacterIn(team: attacker.team)
-            print("🔮\n", attackerChar.name, "gave", victimChar.name, attackerChar.weapon.dmg * -1, "health points")
+            if victimChar.hp - attackerChar.weapon.dmg > victimChar.baseHp{
+                print("🔮\n", attackerChar.name, "gave", victimChar.name, victimChar.baseHp - victimChar.hp, "health points")
+            } else {
+                print("🔮\n", attackerChar.name, "gave", victimChar.name, attackerChar.weapon.dmg * -1, "health points")
+            }
         } else {
             victimChar = chooseCharacterIn(team: victim.team)
             print("⚔️\n", attackerChar.name, "did", attackerChar.weapon.dmg, "dammages to", victimChar.name)
         }
-        let number = Int.random(in: 1 ... 3)
-        if number == 1{
-            criticalHit(aWeapon: attackerChar.weapon)
-            attackerChar.attack(target: victimChar)
-            unCritical(aWeapon: attackerChar.weapon)
-        } else {
         attackerChar.attack(target: victimChar)
-        }
-        print(victimChar.hp)
     }
     func chooseCharacterIn(team: [Character]) -> Character{
         for index in team.indices{
@@ -115,7 +118,7 @@ class Game{
             }
         }
         if let choice = readLine(){
-            if let choiceint = Int(choice), team.indices.contains(choiceint), team[choiceint].isAlive(){
+            if let choiceint = Int(choice), team.indices.contains(choiceint) && team[choiceint].isAlive(){
                 return team[choiceint]
             } else {
                 print("Bad choice")
@@ -125,23 +128,5 @@ class Game{
             print("something went wrong")
             return chooseCharacterIn(team: team)
         }
-    }
-    func Chest(aCharacter: Character){
-        let number = Int.random(in: 1 ... 3)
-        if aCharacter.weapon.name.contains("super"){
-         () // j'ai choisi cette méthode plutôt que changer leurs armes ce qui m'oblige à faire des if dans des if...
-        } else if number == 1{
-            print("🎁\n", "A chest just appear, it contains a weapon wich have twice as much power", aCharacter.name, "equiped it.")
-            aCharacter.weapon.dmg *= 2
-            aCharacter.weapon.name = "superWeapon"
-        }
-        
-    }
-    func criticalHit(aWeapon: Weapon){
-          print("❗️Critical hit❗️ You dealt twice as much.")
-            aWeapon.dmg *= 2
-    }
-    func unCritical(aWeapon: Weapon){
-        aWeapon.dmg /= 2
     }
 }

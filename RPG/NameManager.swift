@@ -9,7 +9,7 @@
 import Foundation
 
 class NameManager{
-    static var tab = [String]()
+    private static var tab = [String]()
     private init(){}
     static func checkName(str: String) -> Bool{
         if tab.contains(str){
