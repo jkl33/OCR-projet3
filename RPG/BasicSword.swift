@@ -8,6 +8,8 @@
 
 import Foundation
 
-class WarriorWeapons: Weapon {
-    let basicSword = Weapon(name: "basicSword", dmg: 100)
+class BasicSword: Weapon {
+    init() {
+        super.init(name: "basicSword", dmg: 10)
+    }
 }

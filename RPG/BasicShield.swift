@@ -8,6 +8,8 @@
 
 import Foundation
 
-class TankWeapons: Weapon {
-    var basicShield = Weapon(name: "basicShield", dmg: 5)
+class BasicShield: Weapon {
+    init() {
+        super.init(name: "basicShield", dmg: 5)
+    }
 }

@@ -10,6 +10,6 @@ import Foundation
 
 class Tank: Character {
     init(name: String){
-        super.init(name: name, hp: 200, weapon: wpTank1, baseHp: 200)
+        super.init(name: name, hp: 200, weapon: BasicShield.init(), baseHp: 200)
     }
 }

@@ -10,6 +10,6 @@ import Foundation
 
 class Warrior: Character {
     init(name: String){
-        super.init(name: name, hp: 100, weapon: wpWarrior1, baseHp: 100)
+        super.init(name: name, hp: 100, weapon: BasicSword.init(), baseHp: 100)
     }
 }

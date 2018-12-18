@@ -9,7 +9,7 @@
 import Foundation
 
 class NameManager{
-    private static var tab = [String]()
+    private static var tab = [String]()   // This array will contain all the names and compare them to each other to make sure every name is unique
     private init(){}
     static func checkName(str: String) -> Bool{
         if tab.contains(str){

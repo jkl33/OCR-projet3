@@ -1,5 +1,5 @@
 //
-//  MageWeapons.swift
+//  DwarfWeapons.swift
 //  RPG
 //
 //  Created by admin on 11/12/2018.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-class MageWeapons: Weapon {
-    var basicCrystalBall = Weapon(name: "basicCrystalBall", dmg: -10)
+class BasicHammer: Weapon {
+    init() {
+        super.init(name: "basicHammer", dmg: 15)
+    }
 }
