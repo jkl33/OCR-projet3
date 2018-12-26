@@ -15,11 +15,11 @@ class Game{
             if NameManager.checkName(str: name){
                 return name
             } else {
-                print("This name is already taken, pick another one.") // In this case i want the player to enter a valide name
+                print("This name is already taken, pick another one, your name can't be empty.") // In this case i want the player to enter a valide name
                 return getName()
             }
         } else {
-            print("This name is already taken, pick another one.") // This is in case the readline() failed
+            print("This name is already taken, pick another one, your name can't be empty.") // This is in case the readline() failed
             return getName()
         }
     }
@@ -30,7 +30,7 @@ class Game{
         let player1 = Player(name: getName())
         print("Player 2 what's your name ?")
         let player2 = Player(name: getName())
-        for _ in 0...2{                       // Both players make their team character by character, i used for because the teams should be made of 3 characaters
+        for _ in 0...2{                       // Both players make their team character by character, i used "for" because the teams should be made of 3 characaters
             makeTheTeam(player: player1)
             makeTheTeam(player: player2)
         }
@@ -82,6 +82,52 @@ class Game{
             }
         }
     }
+    func printWeaponOfChest(aCharacter: Character){
+        if aCharacter is Mage && aCharacter.weapon is MagicWand{
+            print("🎁\n","A chest just appeared, it contains the MagicWand 🖋", aCharacter.name, "equiped it.", "The MagicWand 🖋 can heal for", -aCharacter.weapon.dmg, "health points, the ammount of health points the MagicWand 🖋 can give changes every turn.")
+        } else if aCharacter is Mage{
+            print("🎁\n","A chest just appeared, it contains a random weapon", aCharacter.name, "equiped it.", "The weapon can heal for", -aCharacter.weapon.dmg, "health points")
+        } else if aCharacter.weapon is MagicGlove {
+            print("🎁\n","A chest just appeared, it contains the MagicGlove 🧤", aCharacter.name, "equiped it.", "The MagicGlove 🧤 has", aCharacter.weapon.dmg, "dammage power, the ammount dammage the MagicGlove 🧤 can deal changes every turn.")
+        } else {
+            print("🎁\n","A chest just appeared, it contains a random weapon", aCharacter.name, "equiped it.", "The weapon has", aCharacter.weapon.dmg, "dammage power")
+        }
+    }
+    func attack(attacker: Character, target: Character){
+        let number = Int.random(in: 1 ... 3)
+        if number == 1{
+            print("❗️Critical hit❗️ You dealt twice as much.")
+            target.hp -= attacker.weapon.dmg * 2 // Critical hits will occur randomly and double the dammage or healing of the weapon temporarly
+            if target.weapon.dmg < 0{
+                if target.hp - attacker.weapon.dmg * 2 > target.baseHp{
+                    print("🔮\n", attacker.name, "gave", target.name, target.baseHp - target.hp, "health points")
+                } else {
+                    print("🔮\n", attacker.name, "gave", target.name, attacker.weapon.dmg * -2, "health points")
+                }
+            } else {
+                print("⚔️\n", attacker.name, "did", attacker.weapon.dmg * 2, "dammages to", target.name)
+            }
+        } else {
+            target.hp -= attacker.weapon.dmg
+            if attacker.weapon.dmg < 0{
+                if target.hp - attacker.weapon.dmg > target.baseHp{
+                    print("🔮\n", attacker.name, "gave", target.name, target.baseHp - target.hp, "health points")
+                } else {
+                    print("🔮\n", attacker.name, "gave", target.name, attacker.weapon.dmg * -1, "health points")
+                }
+            } else {
+                print("⚔️\n", attacker.name, "did", attacker.weapon.dmg , "dammages to", target.name)
+            }
+        }
+    }
+    func validHealthPoints(target: Character){
+        if target.hp > target.baseHp{  // This is to prevent a Character for having more health points than he should
+            target.hp = target.baseHp
+        } else if target.hp <= 0{
+            target.hp = 0
+            print(target.name, "is dead 💀")
+        }
+    }
     func attackRound(attacker: Player, victim: Player){
         displayA(team: attacker.team) // Starting the round by displaying each team so the player know what to do
         print("\n")
@@ -90,7 +136,12 @@ class Game{
         print(attacker.name, "Pick someone to play with")
         let attackerChar = chooseCharacterIn(team: attacker.team)
         let aChest = Chest.init()
-        aChest.giveAWeaponTo(aCharacter: attackerChar) // The chest will occur randomly and give a weapon to the character who is about to attack
+        let number = Int.random(in: 1 ... 3)
+        if number == 1{
+            aChest.giveAWeaponTo(aCharacter: attackerChar) // The chest will occur randomly and give a weapon to the character who is about to attack
+            printWeaponOfChest(aCharacter: attackerChar)
+        }
+        aChest.resetMagicWeaponsTo(aCharacter: attackerChar)
         print(attacker.name, "Pick a target")
         var victimChar: Character
         if attackerChar.weapon.dmg < 0{
@@ -98,7 +149,8 @@ class Game{
         } else {
           victimChar = chooseCharacterIn(team: victim.team) // I present to the player his own team since the mage is suppose to heal his allies or himself
         }
-        attackerChar.attack(target: victimChar)
+        attack(attacker: attackerChar, target: victimChar)
+        validHealthPoints(target: victimChar)
     }
     func chooseCharacterIn(team: [Character]) -> Character{
         for index in team.indices{
@@ -119,3 +171,4 @@ class Game{
         }
     }
 }
+

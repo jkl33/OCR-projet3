@@ -12,7 +12,7 @@ class NameManager{
     private static var tab = [String]()   // This array will contain all the names and compare them to each other to make sure every name is unique
     private init(){}
     static func checkName(str: String) -> Bool{
-        if tab.contains(str){
+        if tab.contains(str) || str.isEmpty{
             return false
         } else{
             tab.append(str)
