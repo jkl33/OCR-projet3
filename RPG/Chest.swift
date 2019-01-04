@@ -70,9 +70,9 @@ class Chest{
     }
     func resetMagicWeaponsTo(aCharacter: Character){
         if aCharacter.weapon is MagicWand{       // The MagicWand and MagicGlove need to change their values even if the chest is not supposed to give a new weapon
-            aCharacter.weapon = MagicWand.init()
+            aCharacter.weapon.dmg = Int.random(in: -100 ... -1)
         } else if aCharacter.weapon is MagicGlove{
-            aCharacter.weapon = MagicGlove.init()
+            aCharacter.weapon.dmg = Int.random(in: 1 ... 100)
         }
     }
 }

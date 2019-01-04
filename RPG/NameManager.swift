@@ -14,7 +14,7 @@ class NameManager{
     static func checkName(str: String) -> Bool{
         if tab.contains(str) || str.isEmpty{
             return false
-        } else{
+        } else {
             tab.append(str)
             return true
         }

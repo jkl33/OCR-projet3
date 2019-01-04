@@ -10,6 +10,6 @@ import Foundation
 
 class Mage: Character {
     init(name: String){
-        super.init(name: name, hp: 100, weapon: BasicCrystalBall.init(), baseHp: 100)
+        super.init(name: name, hp: 100, weapon: BasicCrystalBall.init())
     }
 }

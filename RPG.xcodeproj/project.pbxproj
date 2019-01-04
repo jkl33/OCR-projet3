@@ -105,12 +105,9 @@
 		847CDBFF218BE74900686767 /* RPG */ = {
 			isa = PBXGroup;
 			children = (
-				847CDC00218BE74900686767 /* main.swift */,
-				84EA5A4F219B45DB002474B1 /* Game.swift */,
-				843DAB97219AA9E20019F5F0 /* NameManager.swift */,
 				842D292E21A056A900A2B4CD /* Player.swift */,
-				8412C99121B6FC2700E3C8A3 /* Chest.swift */,
 				843DAB9B219AAAC80019F5F0 /* Character.swift */,
+				843DAB97219AA9E20019F5F0 /* NameManager.swift */,
 				84EA5A4B219AED8F002474B1 /* Weapons.swift */,
 				8412C99321B700A900E3C8A3 /* BasicSword.swift */,
 				846B262C21C9374C0012B3F5 /* Greatsword.swift */,
@@ -130,6 +127,9 @@
 				843DAB99219AAA870019F5F0 /* Mage.swift */,
 				843DAB93219AA9B80019F5F0 /* Tank.swift */,
 				843DAB95219AA9CB0019F5F0 /* Dwarf.swift */,
+				8412C99121B6FC2700E3C8A3 /* Chest.swift */,
+				847CDC00218BE74900686767 /* main.swift */,
+				84EA5A4F219B45DB002474B1 /* Game.swift */,
 			);
 			path = RPG;
 			sourceTree = "<group>";
