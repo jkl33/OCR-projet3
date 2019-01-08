@@ -10,6 +10,6 @@ import Foundation
 
 class MagicGlove: Weapon {
     init() {
-        super.init(name: "magicGlove", dmg: Int.random(in: 1 ... 100))
+        super.init(name: "the MagicGlove 🧤, The ammount of dammage the MagicGlove 🧤 can deal changes every turn.", dmg: Int.random(in: 1 ... 100))
     }
 }

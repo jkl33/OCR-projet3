@@ -10,6 +10,6 @@ import Foundation
 
 class MagicWand: Weapon {
     init() {
-        super.init(name: "magicWand", dmg: Int.random(in: -100 ... -1))
+        super.init(name: "the MagicWand 🖋, the ammount of health points the MagicWand 🖋 can give changes every turn. ", dmg: Int.random(in: -100 ... -1))
     }
 }

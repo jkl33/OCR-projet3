@@ -86,6 +86,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84677D6321E1AA51006ED7FE /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				84EA5A4B219AED8F002474B1 /* Weapons.swift */,
+				8412C99321B700A900E3C8A3 /* BasicSword.swift */,
+				846B262C21C9374C0012B3F5 /* Greatsword.swift */,
+				846B262E21C9381A0012B3F5 /* SuperSword.swift */,
+				846B262621BF728A0012B3F5 /* BasicCrystalBall.swift */,
+				846B263021C938840012B3F5 /* GreatCrystalBall.swift */,
+				846B263221C938B60012B3F5 /* SuperCrystalBall.swift */,
+				846B262821BF736D0012B3F5 /* BasicShield.swift */,
+				846B263421C939230012B3F5 /* GreatShield.swift */,
+				846B263621C9394E0012B3F5 /* SuperShield.swift */,
+				846B262A21BF73B70012B3F5 /* BasicHammer.swift */,
+				846B263821C939C30012B3F5 /* GreatHammer.swift */,
+				846B263A21C939FA0012B3F5 /* SuperHammer.swift */,
+				846B263C21C93AD40012B3F5 /* MagicWand.swift */,
+				846B263E21C94A060012B3F5 /* MagicGlove.swift */,
+			);
+			path = Weapons;
+			sourceTree = "<group>";
+		};
+		84677D6521E1AAFB006ED7FE /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				843DAB9B219AAAC80019F5F0 /* Character.swift */,
+				843DAB8F219AA97C0019F5F0 /* Warrior.swift */,
+				843DAB99219AAA870019F5F0 /* Mage.swift */,
+				843DAB93219AA9B80019F5F0 /* Tank.swift */,
+				843DAB95219AA9CB0019F5F0 /* Dwarf.swift */,
+			);
+			name = Characters;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		847CDBF4218BE74900686767 = {
 			isa = PBXGroup;
 			children = (
@@ -106,30 +141,12 @@
 			isa = PBXGroup;
 			children = (
 				842D292E21A056A900A2B4CD /* Player.swift */,
-				843DAB9B219AAAC80019F5F0 /* Character.swift */,
 				843DAB97219AA9E20019F5F0 /* NameManager.swift */,
-				84EA5A4B219AED8F002474B1 /* Weapons.swift */,
-				8412C99321B700A900E3C8A3 /* BasicSword.swift */,
-				846B262C21C9374C0012B3F5 /* Greatsword.swift */,
-				846B262E21C9381A0012B3F5 /* SuperSword.swift */,
-				846B262621BF728A0012B3F5 /* BasicCrystalBall.swift */,
-				846B263021C938840012B3F5 /* GreatCrystalBall.swift */,
-				846B263221C938B60012B3F5 /* SuperCrystalBall.swift */,
-				846B262821BF736D0012B3F5 /* BasicShield.swift */,
-				846B263421C939230012B3F5 /* GreatShield.swift */,
-				846B263621C9394E0012B3F5 /* SuperShield.swift */,
-				846B262A21BF73B70012B3F5 /* BasicHammer.swift */,
-				846B263821C939C30012B3F5 /* GreatHammer.swift */,
-				846B263A21C939FA0012B3F5 /* SuperHammer.swift */,
-				846B263C21C93AD40012B3F5 /* MagicWand.swift */,
-				846B263E21C94A060012B3F5 /* MagicGlove.swift */,
-				843DAB8F219AA97C0019F5F0 /* Warrior.swift */,
-				843DAB99219AAA870019F5F0 /* Mage.swift */,
-				843DAB93219AA9B80019F5F0 /* Tank.swift */,
-				843DAB95219AA9CB0019F5F0 /* Dwarf.swift */,
 				8412C99121B6FC2700E3C8A3 /* Chest.swift */,
 				847CDC00218BE74900686767 /* main.swift */,
 				84EA5A4F219B45DB002474B1 /* Game.swift */,
+				84677D6321E1AA51006ED7FE /* Weapons */,
+				84677D6521E1AAFB006ED7FE /* Characters */,
 			);
 			path = RPG;
 			sourceTree = "<group>";

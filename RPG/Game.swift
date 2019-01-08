@@ -60,7 +60,7 @@ class Game{
             switch choice {
             case "1":
                 print("And whats's his name ?")
-                player.team.append(Warrior.init(name: getName()))// I use getname once again so the player will be asked to enter a valide name over and over untill he does
+                player.team.append(Warrior.init(name: getName()))
             case "2":
                 print("And whats's his name ?")
                 player.team.append(Mage.init(name: getName()))
@@ -102,15 +102,7 @@ class Game{
         
     }
     func printWeaponOfChest(aCharacter: Character){
-        if aCharacter is Mage && aCharacter.weapon is MagicWand{
-            print("🎁\n","A chest just appeared, it contains the MagicWand 🖋", aCharacter.name, "equiped it.", "The ammount of health points the MagicWand 🖋 can give changes every turn.")
-        } else if aCharacter is Mage{
-            print("🎁\n","A chest just appeared, it contains a random weapon", aCharacter.name, "equiped it.", "The weapon can heal for", -aCharacter.weapon.dmg, "health points")
-        } else if aCharacter.weapon is MagicGlove {
-            print("🎁\n","A chest just appeared, it contains the MagicGlove 🧤", aCharacter.name, "equiped it.", "The ammount of dammage the MagicGlove 🧤 can deal changes every turn.")
-        } else {
-            print("🎁\n","A chest just appeared, it contains a random weapon", aCharacter.name, "equiped it.", "The weapon has", aCharacter.weapon.dmg, "dammage power")
-        }
+            print("🎁\n","A chest just appeared, it contains ",  aCharacter.weapon.name, aCharacter.name, "equiped it.", "The weapon has", aCharacter.weapon.dmg, "dammage power")
     }
     func validHealthPoints(target: Character){
         if target.hp > target.baseHp{  // This is to prevent a Character for having more health points than he should
@@ -121,34 +113,37 @@ class Game{
         }
     }
     func displayTheAttack(attacker: Character, target: Character){
-        let oldHp = target.hp
-        attacker.attack(target: target)
-        if target.hp != (oldHp + attacker.weapon.dmg){
+        //let oldHp = target.hp
+        let atk = attacker.attack(target: target)
+        print(atk)
+        //attacker.attack(target: target)
+       // if target.hp != (oldHp + attacker.weapon.dmg){
             
-            if attacker.weapon.dmg < 0{
-                if target.hp - attacker.weapon.dmg > target.baseHp{
-                    print("🔮\n", attacker.name, "gave", target.name, target.baseHp - (target.hp + attacker.weapon.dmg), "health points")
-                } else {
-                    print("🔮\n", attacker.name, "gave", target.name, attacker.weapon.dmg * -1, "health points")
-                }
-            } else {
-                print("⚔️\n", attacker.name, "did", attacker.weapon.dmg , "dammages to", target.name)
-            }
+           // if attacker.weapon.dmg < 0{
+             //   if target.hp - attacker.weapon.dmg > target.baseHp{
+                    
+               //     print("🔮\n", attacker.name, "gave", target.name, target.baseHp - (target.hp + attacker.weapon.dmg), "health points")
+                //} else {
+                  //  print("🔮\n", attacker.name, "gave", target.name, attacker.weapon.dmg * -1, "health points")
+                //}
+            //} else {
+              //  print("⚔️\n", attacker.name, "did", attacker.weapon.dmg , "dammages to", target.name)
+            //}
         }
-        if target.hp == (oldHp + attacker.weapon.dmg){
-            print("❗️Critical hit❗️ You dealt twice as much.")
-            if attacker.weapon.dmg < 0{
-                if target.hp - attacker.weapon.dmg * 2 > target.baseHp{
-                    print("🔮\n", attacker.name, "gaveCRITIKKKK", target.name, target.baseHp - (target.hp + attacker.weapon.dmg * -2), "health points")
-                } else {
-                    print("🔮\n", attacker.name, "gaveCRITIKKKKKKKKKKKKKKKKK", target.name, attacker.weapon.dmg * -2, "health points")
-                }
-            } else {
-                print("⚔️\n", attacker.name, "didCRITIKKKKK", attacker.weapon.dmg * 2, "dammages to", target.name)
-            }
-        }
+        //if target.hp == (oldHp + attacker.weapon.dmg){
+         //   print("❗️Critical hit❗️ You dealt twice as much.")
+           // if attacker.weapon.dmg < 0{
+             //   if target.hp - attacker.weapon.dmg * 2 > target.baseHp{
+               //     print("🔮\n", attacker.name, "gaveCRITIKKKK", target.name, target.baseHp - (target.hp + attacker.weapon.dmg * -2), "health points")
+                //} else {
+                  //  print("🔮\n", attacker.name, "gaveCRITIKKKKKKKKKKKKKKKKK", target.name, attacker.weapon.dmg * -2, "health points")
+                //}
+            //} else {
+              //  print("⚔️\n", attacker.name, "didCRITIKKKKK", attacker.weapon.dmg * 2, "dammages to", target.name)
+            //}
+        //}
         
-    }
+    
     func attackRound(attacker: Player, victim: Player){
         displayA(team: attacker.team); print("\n"); displayA(team: victim.team); print("\n") // Starting the round by displaying each team so the player know what to do
         print(attacker.name, "Pick someone to play with")
@@ -156,8 +151,8 @@ class Game{
         let aChest = Chest.init()
         let number = Int.random(in: 1 ... 3)
         if number == 1{
-            aChest.giveAWeaponTo(aCharacter: attackerChar) // The chest will occur randomly and give a weapon to the character who is about to attack
-            printWeaponOfChest(aCharacter: attackerChar)
+          //  aChest.giveAWeaponTo(aCharacter: attackerChar) // The chest will occur randomly and give a weapon to the character who is about to attack
+           // printWeaponOfChest(aCharacter: attackerChar)
         }
         aChest.resetMagicWeaponsTo(aCharacter: attackerChar)
         if attackerChar.weapon is MagicWand{
@@ -173,8 +168,8 @@ class Game{
             victimChar = chooseCharacterIn(team: victim.team) // I present to the player his own team since the mage is suppose to heal his allies or himself
         }
         displayTheAttack(attacker: attackerChar, target: victimChar)
-        victimChar.validHealthPoints()
-        if victimChar.hp == 0{
+        //victimChar.validHealthPoints()
+        if victimChar.isAlive() == false{
             print(victimChar.name, "is dead 💀")
         }
         

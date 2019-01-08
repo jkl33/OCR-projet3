@@ -31,13 +31,29 @@ class Character{
         }
     }
    
-    func attack(target: Character){
+    func attack(target: Character) -> Int{
+        let oldHp = hp
         let number = Int.random(in: 1 ... 3) // Critical hits will occur randomly and double the dammage or healing of the weapon temporarly
         if number == 1{
            target.hp -= weapon.dmg * 2
+            
         } else {
             target.hp -= weapon.dmg
+            //return attackresult()
         }
+        if hp > baseHp{  // This is to prevent a Character for having more health points than he should
+            hp = baseHp
+        } else if hp < 0{
+            hp = 0
+        }
+        let res = hp - oldHp
+        return (res)
+    }
+    func itThisCritical() -> Bool{
+    
+        return true
+       
+        
     }
     func validHealthPoints(){
         if hp > baseHp{  // This is to prevent a Character for having more health points than he should
