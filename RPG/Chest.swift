@@ -24,7 +24,7 @@ class Chest{
                 print("Something went wrong")
             }
         }
-    func giveABasicWeaponTo(someCharacter: Character){
+    private func giveABasicWeaponTo(someCharacter: Character){
         if someCharacter is Warrior{
             someCharacter.weapon = BasicSword.init()
         } else if someCharacter is Mage{
@@ -35,7 +35,7 @@ class Chest{
             someCharacter.weapon = BasicHammer.init()
         }
     }
-    func giveAGreatWeaponTo(someCharacter: Character){
+    private func giveAGreatWeaponTo(someCharacter: Character){
         if someCharacter is Warrior{
             someCharacter.weapon = GreatSword.init()
         } else if someCharacter is Mage{
@@ -46,7 +46,7 @@ class Chest{
             someCharacter.weapon = GreatHammer.init()
         }
     }
-    func giveASuperWeaponTo(someCharacter: Character){
+    private func giveASuperWeaponTo(someCharacter: Character){
         if someCharacter is Warrior{
             someCharacter.weapon = SuperSword.init()
         } else if someCharacter is Mage{
@@ -57,7 +57,7 @@ class Chest{
             someCharacter.weapon = SuperHammer.init()
         }
     }
-    func giveAMagicWeaponTo(someCharacter: Character){
+    private func giveAMagicWeaponTo(someCharacter: Character){
         if someCharacter is Warrior{
             someCharacter.weapon = MagicGlove.init()
         } else if someCharacter is Mage{
@@ -66,13 +66,6 @@ class Chest{
             someCharacter.weapon = MagicGlove.init()
         } else if someCharacter is Dwarf{
             someCharacter.weapon = MagicGlove.init()
-        }
-    }
-    func resetMagicWeaponsTo(aCharacter: Character){
-        if aCharacter.weapon is MagicWand{       // The MagicWand and MagicGlove need to change their values even if the chest is not supposed to give a new weapon
-            aCharacter.weapon.dmg = Int.random(in: -100 ... -1)
-        } else if aCharacter.weapon is MagicGlove{
-            aCharacter.weapon.dmg = Int.random(in: 1 ... 100)
         }
     }
 }

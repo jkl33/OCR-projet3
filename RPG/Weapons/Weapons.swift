@@ -10,7 +10,7 @@ import Foundation
 
 class Weapon{
     let name: String
-    var dmg: Int
+    var dmg = 0
     init(name: String, dmg: Int){
         self.name = name
         self.dmg = dmg
