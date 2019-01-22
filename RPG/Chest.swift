@@ -10,20 +10,20 @@ import Foundation
 
 class Chest{
     func giveAWeaponTo(aCharacter: Character){
-            let weaponNumber = Int.random(in: 1 ... 4)
-            switch weaponNumber{
-            case 1:
-                giveABasicWeaponTo(someCharacter: aCharacter)
-            case 2:
-                giveAGreatWeaponTo(someCharacter: aCharacter)
-            case 3:
-                giveASuperWeaponTo(someCharacter: aCharacter)
-            case 4:
-                giveAMagicWeaponTo(someCharacter: aCharacter)
-            default:
-                print("Something went wrong")
-            }
+        let weaponNumber = Int.random(in: 1 ... 4)
+        switch weaponNumber{
+        case 1:
+            giveABasicWeaponTo(someCharacter: aCharacter)
+        case 2:
+            giveAGreatWeaponTo(someCharacter: aCharacter)
+        case 3:
+            giveASuperWeaponTo(someCharacter: aCharacter)
+        case 4:
+            giveAMagicWeaponTo(someCharacter: aCharacter)
+        default:
+            print("Something went wrong")
         }
+    }
     private func giveABasicWeaponTo(someCharacter: Character){
         if someCharacter is Warrior{
             someCharacter.weapon = BasicSword.init()
@@ -66,6 +66,14 @@ class Chest{
             someCharacter.weapon = MagicGlove.init()
         } else if someCharacter is Dwarf{
             someCharacter.weapon = MagicGlove.init()
+        }
+    }
+    // This function let the player know what weapon did the chest gave the character about to attack
+    func printWeaponOfChest(aCharacter: Character){
+        if aCharacter is Mage{
+            print("🎁","A chest just appeared, it contains a",  aCharacter.weapon.name, aCharacter.name, "equiped it.", "The weapon can heal for", -aCharacter.weapon.dmg, "health points")
+        } else {
+            print("🎁","A chest just appeared, it contains a",  aCharacter.weapon.name, aCharacter.name, "equiped it.", "The weapon has", aCharacter.weapon.dmg, "dammage power")
         }
     }
 }

@@ -30,7 +30,6 @@
 		846B263D21C93AD40012B3F5 /* MagicWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B263C21C93AD40012B3F5 /* MagicWand.swift */; };
 		846B263F21C94A060012B3F5 /* MagicGlove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B263E21C94A060012B3F5 /* MagicGlove.swift */; };
 		847CDC01218BE74900686767 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDC00218BE74900686767 /* main.swift */; };
-		84E754D521E51C64004CC52C /* AttackResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E754D421E51C64004CC52C /* AttackResult.swift */; };
 		84EA5A4C219AED8F002474B1 /* Weapons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA5A4B219AED8F002474B1 /* Weapons.swift */; };
 		84EA5A50219B45DB002474B1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA5A4F219B45DB002474B1 /* Game.swift */; };
 /* End PBXBuildFile section */
@@ -72,7 +71,6 @@
 		846B263E21C94A060012B3F5 /* MagicGlove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicGlove.swift; sourceTree = "<group>"; };
 		847CDBFD218BE74900686767 /* RPG */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RPG; sourceTree = BUILT_PRODUCTS_DIR; };
 		847CDC00218BE74900686767 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		84E754D421E51C64004CC52C /* AttackResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackResult.swift; sourceTree = "<group>"; };
 		84EA5A4B219AED8F002474B1 /* Weapons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapons.swift; sourceTree = "<group>"; };
 		84EA5A4F219B45DB002474B1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				843DAB9B219AAAC80019F5F0 /* Character.swift */,
-				84E754D421E51C64004CC52C /* AttackResult.swift */,
 				843DAB8F219AA97C0019F5F0 /* Warrior.swift */,
 				843DAB99219AAA870019F5F0 /* Mage.swift */,
 				843DAB93219AA9B80019F5F0 /* Tank.swift */,
@@ -231,7 +228,6 @@
 				843DAB98219AA9E20019F5F0 /* NameManager.swift in Sources */,
 				843DAB94219AA9B80019F5F0 /* Tank.swift in Sources */,
 				846B262B21BF73B70012B3F5 /* BasicHammer.swift in Sources */,
-				84E754D521E51C64004CC52C /* AttackResult.swift in Sources */,
 				846B263B21C939FA0012B3F5 /* SuperHammer.swift in Sources */,
 				846B262D21C9374C0012B3F5 /* Greatsword.swift in Sources */,
 				846B263921C939C30012B3F5 /* GreatHammer.swift in Sources */,

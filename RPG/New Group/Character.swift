@@ -12,7 +12,7 @@ class Character{
     let name: String
     var hp: Int{
          didSet{
-            if hp > baseHp{  // This is to prevent a Character for having more health points than he should
+            if hp > baseHp{
                 hp = baseHp
             } else if hp < 0{
                 hp = 0
@@ -30,15 +30,15 @@ class Character{
     func isAlive() -> Bool{
         return hp > 0
     }
-    func attack(target: Character) -> AttackResult{
+    func attack(target: Character) -> (dammages: Int, isThisCritical: Bool){
         let oldTargetHp = target.hp
         if isThisACriticalHit(){
            target.hp -= weapon.dmg * 2
             print("❗️Critical hit❗️")
-            return AttackResult.init(dammages: oldTargetHp - target.hp, isCritical: true)
+            return (oldTargetHp - target.hp, true)
         } else {
             target.hp -= weapon.dmg
-            return AttackResult.init(dammages: oldTargetHp - target.hp, isCritical: false)
+            return (oldTargetHp - target.hp, false)
         }
     }
     private func isThisACriticalHit() -> Bool{
